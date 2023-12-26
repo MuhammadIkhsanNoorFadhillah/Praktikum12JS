@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Validlogin() {
+            const Username = "ahmad2017";
+            const Password = "integrity";
+            
+            const enteredUsername = document.getElementById("Username").value;
+            const enteredPassword = document.getElementById("Password").value;
+
+            if (enteredUsername === Username && enteredPassword === Password){
+                alert("Login Sukses");
+                window.location.href = "NextHalaman.html"
+            } else {
+                alert("Login Gagal");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form id="LoginForm" onsubmit="Validlogin(); return false;">
+        <label for="Username">Username :</label><br>
+        <input type="text" id="Username" name="Username"><br>
+        <label for="Password">Password :</label><br>
+        <input type="password" id="Password" name="Password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Box</title>
+    <style>
+        /* CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        fieldset {
+            height: 2000px;
+            margin: 10px;
+            padding: 30px;
+        }
+
+        .container {
+            height: 300px;
+            width: 300px;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            background-color: orange;
+            border-radius: 20px;
+        }
+
+        section {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            border: 1px solid darkblue;
+            border-radius: 20px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+            padding: 10px 0;
+            border-bottom: 1px solid darkblue;
+        }
+
+        div#textBox {
+            height: 65%;
+            width: 100%;
+            padding: 10px;
+            position: relative;
+            border: 1px solid darkblue;
+            background-color: aliceblue;
+            overflow: auto;
+        }
+        
+        .floating {
+            width: 100%;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        input, button {
+            padding: 5px;
+            border-radius: 15px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Simple Chat Box App</legend>
+        <div class="container">
+            <section>
+                <h1>Chat Box App</h1>
+                <div id="textBox">
+                </div>
+                <div class="floating">
+                    <input type="text" id="inputText" placeholder="Masukkan pesan disini">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </section>
+        </div>
+    </fieldset>
+    <script>
+        function sendMessage() {
+            let text = document.getElementById("inputText").value;
+            let message = document.createElement("p");
+
+            message.innerHTML = String(text);
+            let box = document.getElementById("textBox");
+            return box.appendChild(message).style.margin = "10px";
+        }
+    </script>
+</body>
+</html>

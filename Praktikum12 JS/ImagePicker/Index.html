@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImagePicker</title>
+    <script>
+
+        function ImagePicker(){
+            const DaftarGambar = ["Dino.png","Naga.png","Cheetah.png","Aulia Rahman.jpg"];
+            let Pilihan = document.getElementById("Animal").value;
+
+            if (Pilihan == "tirex"){
+                let select = DaftarGambar[0];
+                document.getElementById("Pictures").src = `Image/${select}`;
+            }
+            if (Pilihan == "naga"){
+                let select = DaftarGambar[1];
+                document.getElementById("Pictures").src = `Image/${select}`;
+            }
+            if (Pilihan == "cheetah"){
+                let select = DaftarGambar[2];
+                document.getElementById("Pictures").src = `Image/${select}`;
+            }
+            if (Pilihan == "auliarahman"){
+                let select = DaftarGambar[3];
+                document.getElementById("Pictures").src = `Image/${select}`;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Image Picker</h1>
+    <select name="" id="Animal" onchange="ImagePicker()">
+        <option value="">Choose Image</option>
+        <option value="tirex">T-Rex</option>
+        <option value="naga">Dragon</option>
+        <option value="cheetah">Cheetah</option>
+        <option value="auliarahman">Aulia Rahman</option>
+    </select>
+
+    <div class="container">
+        <br>
+        <img id="Pictures" width="400px">
+    </div>
+</body>
+</html>
